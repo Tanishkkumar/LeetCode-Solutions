@@ -13,5 +13,6 @@ int main(){
     for(int i= 0;i<vect2.size();i++){
         cout<<vect2[i]<<" ";
     }
+     
     return 0;
 }
