@@ -1,0 +1,29 @@
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        ListNode temp=head;
+        ListNode temp2=head;
+        int count=0;
+        while(temp!=null){
+           temp=temp.next;
+           count++;
+        }
+        int []arr=new int[count];
+        int i=0;
+        while(temp2!=null){
+            arr[i++]=temp2.val;
+            temp2=temp2.next;
+        }
+        int b=count;
+        int y=0;
+        for( i=0;i<count/2;i++){
+           if(arr[i]!=arr[b-1]){
+               y=-1;
+           }
+           b--;
+        }
+        if(y!=0){
+            return false;
+        }
+        return true;
+    }
+}
