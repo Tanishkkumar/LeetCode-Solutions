@@ -1,0 +1,28 @@
+class Solution {
+    public boolean isValid(String s) {
+        if(s.charAt(0)=='}' || s.charAt(0)==']' || s.charAt(0)==')' ){
+            return false;
+        }
+        else{
+            Stack<Character> c=new Stack<>();
+            c.push('y');
+            for(int i=0;i<s.length();i++){
+                if(s.charAt(i)=='{' || s.charAt(i)=='[' || s.charAt(i)=='(' ){
+                 c.push(s.charAt(i));
+                 }
+                else if(s.charAt(i)=='}' && c.peek()=='{' || s.charAt(i)==']' && c.peek()=='[' || s.charAt(i)==')' && c.peek()=='(' ){
+                 c.pop();
+                 }
+                 else{
+                    c.push(s.charAt(i)); 
+                 }
+
+            }
+            if(c.peek()=='y'){
+            return true;
+        }
+        }
+        
+        return false;
+    }
+}
